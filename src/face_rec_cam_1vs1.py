@@ -4,8 +4,8 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 from datetime import datetime
 import time
-import face_detection
-import face_identification
+from face_detection import Face_detector
+from face_identification import Face_identifier
 import cv2
 import pandas as pd
 from settings import (
@@ -23,6 +23,8 @@ cap = cv2.VideoCapture(0)  # 0 is source of webcam
 
 def main():
     # TODO Tracking face to optimize
+    face_detector = Face_detector()
+    face_identifier = Face_identifier()
     name_current = []
     df = pd.read_json(DATA_FACE_DIR)
 
@@ -35,7 +37,7 @@ def main():
         name = df2["name"].to_numpy().tolist()
         time_full = df2["time"].to_numpy().tolist()
         ret, frame = cap.read()
-        faces, x, y = face_detection.detect_face(frame)
+        faces, x, y = face_detector.detect_face(frame)
         if len(faces) == 0:
             continue
         for i in range(len(faces)):
@@ -43,7 +45,7 @@ def main():
             ymin, ymax = y[i]
             frame = cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (255, 0, 0), 2)
             data_faces = data_image
-            name_member = face_identification.result_name(faces[i], data_faces, members)
+            name_member = face_identifier.result_name(faces[i], data_faces, members)
             current_time = datetime.now()
             if time.time() - time_current >= 3600:
                 df = pd.read_json(DATA_FACE_DIR)
