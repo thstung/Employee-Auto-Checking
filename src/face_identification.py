@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from openvino.inference_engine import IECore
-from settings import (
+from src.settings import (
     MODEL_IDENTIFY_XML,
     MODEL_IDENTIFY_BIN,
     FACE_SIZE,

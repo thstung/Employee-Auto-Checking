@@ -7,5 +7,6 @@ Pillow
 requests
 psutil
 imageio
-openvino
+openvino-dev
+streamlit-webrtc
 

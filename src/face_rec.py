@@ -4,12 +4,12 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 from datetime import datetime
 import time
-from face_detection import Face_detector
-from face_identification import Face_identifier
+from src.face_detection import Face_detector
+from src.face_identification import Face_identifier
 import cv2
 import pandas as pd
 import numpy as np
-from settings import (
+from src.settings import (
     DATA_FACE_DIR,
 )
 
@@ -33,10 +33,21 @@ class Face_recognition:
             self.bbox = [[xmin, ymin], [xmax, ymax]]
             self.frame = cv2.rectangle(image, (xmin, ymin), (xmax, ymax), (255, 0, 0), 2)
             self.name_member = self.face_identifier.result_name(imgs[i], self.data_faces, self.members)
+            
             if self.name_member != "Unknown":
                 self.current_time = datetime.now()
+                self.frame = cv2.putText(
+                self.frame,
+                self.name_member + ' ' + self.current_time,
+                (xmin, ymin),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                1,
+                (0, 255, 0),
+                2,
+                cv2.LINE_AA,
+            )
                 break
-        return self.frame, self.bbox, self.name_member, self.current_time
+        return self.frame
 # def main(image):
 #     imgs, x, y = face_detection.detect_face(image)
 #     if len(imgs) == 0:
