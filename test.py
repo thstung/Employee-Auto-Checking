@@ -8,7 +8,7 @@ from streamlit_webrtc import (
     RTCConfiguration,
 )
 from src.face_rec import Face_recognition
-
+RTC_CONFIGURATION = RTCConfiguration
 face_recognition = Face_recognition
 # from tensorflow.keras.models import load_model
 
@@ -58,7 +58,7 @@ def choose_webcam():
     webrtc_streamer(
         key="WYH",
         mode=WebRtcMode.SENDRECV,
-        rtc_configuration=RTC_CONFIGURATION
+        rtc_configuration=RTC_CONFIGURATION,
         media_stream_constraints={"video": True, "audio": False},
         video_processor_factory=VideoProcessor,
         async_processing=True,
