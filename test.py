@@ -24,12 +24,12 @@ face_recognition = Face_recognition
 # from sources.detect_mask_image import detect_mask_in_image
 
 # Setting custom Page Title and Icon with changed layout and sidebar state
-# st.set_page_config(
-#     page_title="Face Mask Detector",
-#     page_icon="😷",
-#     layout="centered",
-#     initial_sidebar_state="expanded",
-# )
+st.set_page_config(
+    page_title="Face Mask Detector",
+    page_icon="😷",
+    layout="centered",
+    initial_sidebar_state="expanded",
+)
 
 # Load models
 # prototxtPath = MODEL_CONFIG
@@ -51,36 +51,6 @@ def local_css(file_name):
     # Method for reading styles.css and applying necessary changes to HTML
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-
-# def choose_image():
-#     # st.sidebar.markdown('Upload your image ⬇')
-#     image_file = st.sidebar.file_uploader("", type=IMAGE_TYPES)
-
-#     if not image_file:
-#         text = """This is a detection example.
-#         Try your input from the left sidebar.
-#         """
-#         st.markdown(
-#             '<h6 align="center">' + text + "</h6>",
-#             unsafe_allow_html=True,
-#         )
-#         st.image(example_image, use_column_width=True)
-#     else:
-#         st.sidebar.markdown(
-#             "__Image is uploaded successfully!__",
-#             unsafe_allow_html=True,
-#         )
-#         st.markdown(
-#             '<h4 align="center">Detection result</h4>',
-#             unsafe_allow_html=True,
-#         )
-
-#         PIL_image = Image.open(image_file)
-
-#         image = np.array(PIL_image)
-#         image = detect_mask_in_image(image, faceNet, maskNet)
-#         st.image(image, use_column_width=True)
 
 
 def choose_webcam():
