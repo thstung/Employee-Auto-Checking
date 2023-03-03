@@ -98,7 +98,8 @@ def choose_webcam():
 def main():
     local_css("styles.css")
     st.markdown(
-        '<h6 align="center">TTLAB-AI-TEAM</h6>',
+
+        '<h6 align="center"><img src="https://www.tokyotechlab.com/wp-content/uploads/2019/12/ttlab-logo.svg" alt="TTL" width="160" height="150">TTLAB-AI-TEAM</h6>',
         unsafe_allow_html=True,
     )
     st.markdown(
