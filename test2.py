@@ -98,11 +98,11 @@ def choose_webcam():
 def main():
     local_css("styles.css")
     st.markdown(
-        '<h6 align="center">TT HACKATHON - Feb 2022</h6>',
+        '<h6 align="center">TTLAB AI TEAM</h6>',
         unsafe_allow_html=True,
     )
     st.markdown(
-        '<h1 align="center">😷 Face Mask Detection</h1>',
+        '<h1 align="center">😷 Auto Checking Employee TTLAB</h1>',
         unsafe_allow_html=True,
     )
     st.set_option("deprecation.showfileUploaderEncoding", False)
