@@ -27,7 +27,7 @@ class Face_recognition:
         # self.frame = image
         imgs, x, y  = self.face_detector.detect_face(image)
         if len(imgs) == 0:
-            return None
+            return image
         for i in range(len(imgs)):
             xmin, xmax = x[i]
             ymin, ymax = y[i]
