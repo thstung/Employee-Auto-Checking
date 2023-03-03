@@ -10,7 +10,9 @@ body {
     background-image: none;
     color: black;
 }
-
+img {
+    text-align: center;
+}
 /* Removing Main Menubar and Footer */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
