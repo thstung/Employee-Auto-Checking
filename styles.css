@@ -10,11 +10,7 @@ body {
     background-image: none;
     color: black;
 }
-img {
-    display: block;
-    width: 120px;
-	height: 120px;
-}
+
 h6 {
     font-size: 60px;
 }
