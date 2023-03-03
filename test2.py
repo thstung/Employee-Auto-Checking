@@ -98,10 +98,12 @@ def choose_webcam():
 def main():
     local_css("styles.css")
     st.markdown(
+        '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwRT28I_4La088pMwYq43LOG3NAGrZUP2YnaUCwmRphw&s" alt="đây là icon TTLAB">',
         '<h6 align="center">TTLAB AI TEAM</h6>',
         unsafe_allow_html=True,
     )
     st.markdown(
+       
         '<h1 align="center">😷 Auto Checking Employee TTLAB</h1>',
         unsafe_allow_html=True,
     )
