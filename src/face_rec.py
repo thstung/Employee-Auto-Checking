@@ -32,13 +32,13 @@ class Face_recognition:
             xmin, xmax = x[i]
             ymin, ymax = y[i]
             self.bbox = [[xmin, ymin], [xmax, ymax]]
-            self.frame = cv2.rectangle(image, (xmin, ymin), (xmax, ymax), (255, 0, 0), 2)
+            image = cv2.rectangle(image, (xmin, ymin), (xmax, ymax), (255, 0, 0), 2)
             self.name_member = self.face_identifier.result_name(imgs[i], self.data_faces, self.members)
             
             if self.name_member != "Unknown":
                 self.current_time = datetime.now()
-                self.frame = cv2.putText(
-                self.frame,
+                image = cv2.putText(
+                image,
                 self.name_member + ' ' + str(self.current_time),
                 (xmin, ymin),
                 cv2.FONT_HERSHEY_SIMPLEX,
@@ -48,9 +48,9 @@ class Face_recognition:
                 cv2.LINE_AA,
             )
                 break
-        if self.frame is None:
-            self.frame = image
-        return self.frame
+        # if self.frame is None:
+        #     self.frame = image
+        return image
 # def main(image):
 #     imgs, x, y = face_detection.detect_face(image)
 #     if len(imgs) == 0:
