@@ -42,7 +42,7 @@ st.set_page_config(
 class VideoProcessor:
     def recv(self, frame):
         image = frame.to_ndarray(format="bgr24")
-        # image = face_recognition.recogny_face(image)
+        image = face_recognition.recogny_face(image)
         return av.VideoFrame.from_ndarray(image, format="bgr24")
 
 
