@@ -28,12 +28,12 @@ st.set_page_config(
 )
 
 # Load models
-prototxtPath = MODEL_CONFIG
-weightsPath = MODEL_FACE_DETECTOR
-faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
-maskNet = load_model(MODEL_MASK_DETECTOR)
-example_image = IMAGE_EXAMPLE
-print("[INFO] loaded face mask detector model")
+# prototxtPath = MODEL_CONFIG
+# weightsPath = MODEL_FACE_DETECTOR
+# faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
+# maskNet = load_model(MODEL_MASK_DETECTOR)
+# example_image = IMAGE_EXAMPLE
+# print("[INFO] loaded face mask detector model")
 
 
 class VideoProcessor:
@@ -93,7 +93,7 @@ def choose_webcam():
 
 
 def main():
-    local_css("css/styles.css")
+    local_css("styles.css")
     st.markdown(
         '<h6 align="center">TT HACKATHON - Feb 2022</h6>',
         unsafe_allow_html=True,
