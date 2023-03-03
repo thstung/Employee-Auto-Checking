@@ -8,6 +8,9 @@ from streamlit_webrtc import (
     webrtc_streamer,
 )
 from tensorflow.keras.models import load_model
+from src.face_rec import Face_recognition
+face_recognition = Face_recognition()
+
 
 from config import (
     IMAGE_EXAMPLE,
@@ -39,7 +42,7 @@ st.set_page_config(
 class VideoProcessor:
     def recv(self, frame):
         image = frame.to_ndarray(format="bgr24")
-        # image = detect_mask_in_image(image, faceNet, maskNet)
+        image = face_recognition.recogny_face(image)
         return av.VideoFrame.from_ndarray(image, format="bgr24")
 
 
