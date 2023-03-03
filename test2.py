@@ -42,7 +42,7 @@ st.set_page_config(
 class VideoProcessor:
     def recv(self, frame):
         image = frame.to_ndarray(format="bgr24")
-        # image = face_recognition.recogny_face(image)
+        image = face_recognition.recogny_face(image)
         return av.VideoFrame.from_ndarray(image, format="bgr24")
 
 
@@ -98,16 +98,10 @@ def choose_webcam():
 def main():
     local_css("styles.css")
     st.markdown(
-       '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwRT28I_4La088pMwYq43LOG3NAGrZUP2YnaUCwmRphw&s" alt="đây là icon TTLAB">',
+        '<h6 align="center">TTLAB-AI-TEAM</h6>',
         unsafe_allow_html=True,
     )
     st.markdown(
-         
-        '<h6 align="center">TTLAB AI TEAM</h6>',
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-       
         '<h1 align="center">😷 Auto Checking Employee TTLAB</h1>',
         unsafe_allow_html=True,
     )
