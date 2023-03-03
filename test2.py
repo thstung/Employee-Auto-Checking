@@ -42,7 +42,7 @@ st.set_page_config(
 class VideoProcessor:
     def recv(self, frame):
         image = frame.to_ndarray(format="bgr24")
-        # image = face_recognition.recogny_face(image)
+        image = face_recognition.recogny_face(image)
         return av.VideoFrame.from_ndarray(image, format="bgr24")
 
 
@@ -86,7 +86,7 @@ def choose_webcam():
     st.sidebar.markdown('Click "START" to connect this app to a server')
     st.sidebar.markdown("It may take a minute, please wait...")
     webrtc_streamer(
-        key="hls",
+        key="WYH",
         mode=WebRtcMode.SENDRECV,
         rtc_configuration=RTC_CONFIGURATION,
         media_stream_constraints={"video": True, "audio": False},
