@@ -24,7 +24,7 @@ class Face_recognition:
         self.face_detector = Face_detector()
         self.face_identifier = Face_identifier()
     def recogny_face(self, image: np.ndarray):
-        self.frame = image
+        # self.frame = image
         imgs, x, y  = self.face_detector.detect_face(image)
         if len(imgs) == 0:
             return None
@@ -48,6 +48,8 @@ class Face_recognition:
                 cv2.LINE_AA,
             )
                 break
+        if self.frame is None:
+            self.frame = image
         return self.frame
 # def main(image):
 #     imgs, x, y = face_detection.detect_face(image)
