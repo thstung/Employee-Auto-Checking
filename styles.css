@@ -12,11 +12,11 @@ body {
 }
 img {
     text-align: center;
-    width: 30px;
-	height: 30px;
+    width: 60px;
+	height: 60px;
 }
 h6 {
-    font-size: large;
+    font-size: 60px;
 }
 /* Removing Main Menubar and Footer */
 #MainMenu {visibility: hidden;}
