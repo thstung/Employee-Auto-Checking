@@ -24,6 +24,7 @@ class Face_recognition:
         self.face_detector = Face_detector()
         self.face_identifier = Face_identifier()
     def recogny_face(self, image: np.ndarray):
+        self.frame = image
         imgs, x, y  = self.face_detector.detect_face(image)
         if len(imgs) == 0:
             return None
