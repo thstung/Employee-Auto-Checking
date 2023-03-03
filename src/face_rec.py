@@ -4,12 +4,12 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 from datetime import datetime
 import time
-from src.face_detection import Face_detector
-from src.face_identification import Face_identifier
+from face_detection import Face_detector
+from face_identification import Face_identifier
 import cv2
 import pandas as pd
 import numpy as np
-from src.settings import (
+from settings import (
     DATA_FACE_DIR,
 )
 
@@ -38,7 +38,7 @@ class Face_recognition:
                 self.current_time = datetime.now()
                 self.frame = cv2.putText(
                 self.frame,
-                self.name_member + ' ' + self.current_time,
+                self.name_member + ' ' + str(self.current_time),
                 (xmin, ymin),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 1,
