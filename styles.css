@@ -11,7 +11,7 @@ body {
     color: black;
 }
 img {
-    object-position: 1500px 0;
+    display: block;
     width: 120px;
 	height: 120px;
 }
