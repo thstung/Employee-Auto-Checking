@@ -36,7 +36,7 @@ st.set_page_config(
 # faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 # maskNet = load_model(MODEL_MASK_DETECTOR)
 # example_image = IMAGE_EXAMPLE
-# print("[INFO] loaded face mask detector model")
+# print("[INFO] loaded face mask detector model")..
 
 
 class VideoProcessor:
