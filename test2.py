@@ -86,7 +86,7 @@ def choose_webcam():
     st.sidebar.markdown('Click "START" to connect this app to a server')
     st.sidebar.markdown("It may take a minute, please wait...")
     webrtc_streamer(
-        key="example",
+        key="WYH",
         mode=WebRtcMode.SENDRECV,
         rtc_configuration=RTC_CONFIGURATION,
         media_stream_constraints={"video": True, "audio": False},
