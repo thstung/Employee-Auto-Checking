@@ -1,4 +1,5 @@
 tensorflow
+--upgrade pip
 scikit-learn
 h5py
 matplotlib
