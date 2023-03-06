@@ -1,5 +1,5 @@
 
-tensorflow==2.12.0rc0
+tensorflow
 pip==23.0.1
 scikit-learn
 h5py
