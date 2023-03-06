@@ -1,4 +1,4 @@
-tensorflow-gpu
+tensorflow
 scikit-learn
 h5py
 matplotlib
