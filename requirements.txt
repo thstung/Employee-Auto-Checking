@@ -8,6 +8,7 @@ requests
 psutil
 imageio
 openvino-dev
+streamlit
 streamlit-webrtc
 opencv-python-headless
 opencv-contrib-python-headless==4.5.3.56
