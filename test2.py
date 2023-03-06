@@ -24,7 +24,7 @@ from config import (
 
 # Setting custom Page Title and Icon with changed layout and sidebar state
 st.set_page_config(
-    page_title="Face Mask Detector",
+    page_title="Employee Auto Checking",
     page_icon="😷",
     layout="centered",
     initial_sidebar_state="expanded",
