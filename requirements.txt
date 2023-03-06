@@ -1,5 +1,5 @@
 tensorflow
---upgrade pip
+pip == 23.0.1
 scikit-learn
 h5py
 matplotlib
