@@ -5,7 +5,7 @@ import numpy as np
 import os
 import keras
 import tensorflow as tf
-from settings import MODEL_FACE_ANTI_SPOOFING_HYPERFAS
+from src.settings import MODEL_FACE_ANTI_SPOOFING_HYPERFAS
 model = keras.models.load_model(MODEL_FACE_ANTI_SPOOFING_HYPERFAS)
 def detect_face_spoofing(face, threshold = 0.75):
     face = (cv2.resize(face,(224,224))-127.5)/127.5
