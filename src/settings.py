@@ -12,3 +12,4 @@ FACE_SIZE = 128
 
 DATA_FACE_DIR = "Dataset/FaceData/processed/data_face.json"
 DATA_RESULT_DIR = "Dataset/FaceData/processed/result.json"
+MODEL_FACE_ANTI_SPOOFING_HYPERFAS = 'Models/hyperfas.h5'

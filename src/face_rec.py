@@ -12,7 +12,7 @@ import numpy as np
 from src.settings import (
     DATA_FACE_DIR,
 )
-
+from src.face_anti_spoofing import detect_face_spoofing
 # df = pd.read_json(DATA_FACE_DIR)
 # data_faces = df["face"].to_numpy().tolist()
 # members = df["name"].to_numpy().tolist()
@@ -33,7 +33,11 @@ class Face_recognition:
             ymin, ymax = y[i]
             self.bbox = [[xmin, ymin], [xmax, ymax]]
             image = cv2.rectangle(image, (xmin, ymin), (xmax, ymax), (255, 0, 0), 2)
-            self.name_member = self.face_identifier.result_name(imgs[i], self.data_faces, self.members)
+            pred, score = detect_face_spoofing(imgs[i])
+            if pred == 0:
+                self.name_member = "Fake"
+            else:
+                self.name_member = self.face_identifier.result_name(imgs[i], self.data_faces, self.members)
             
             if self.name_member != "Unknown":
                 self.current_time = datetime.now()
