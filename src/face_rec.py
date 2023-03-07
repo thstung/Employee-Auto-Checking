@@ -12,7 +12,9 @@ import numpy as np
 from src.settings import (
     DATA_FACE_DIR,
 )
-from src.face_anti_spoofing import detect_face_spoofing
+import src.face_anti_spoofing_using_hyperfas as face_anti_spoofing_using_hyperfas
+import src.face_anti_spoofing_using_mobilenet as face_anti_spoofing_using_mobilenet
+
 # df = pd.read_json(DATA_FACE_DIR)
 # data_faces = df["face"].to_numpy().tolist()
 # members = df["name"].to_numpy().tolist()
@@ -33,10 +35,12 @@ class Face_recognition:
             ymin, ymax = y[i]
             self.bbox = [[xmin, ymin], [xmax, ymax]]
             image = cv2.rectangle(image, (xmin, ymin), (xmax, ymax), (255, 0, 0), 2)
-            pred, score = detect_face_spoofing(imgs[i])
+            # pred, score = face_anti_spoofing_using_hyperfas.detect_face_spoofing(imgs[i])
+            pred, score = face_anti_spoofing_using_mobilenet.detect_face_spoofing(imgs[i])
             if pred == 0:
-                self.name_member = "Fake"
+                self.name_member = "Fake" + '_' + str(round(score, 2))
             else:
+                # self.name_member = "Real" + '_' + str(round(score, 2))
                 self.name_member = self.face_identifier.result_name(imgs[i], self.data_faces, self.members)
             
             if self.name_member != "Unknown":

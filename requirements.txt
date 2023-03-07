@@ -1,5 +1,6 @@
-
 tensorflow
+torch
+torchvision
 pip==23.0.1
 scikit-learn
 h5py
@@ -8,7 +9,6 @@ Pillow
 requests
 psutil
 imageio
-openvino-dev
 streamlit
 streamlit-webrtc
 opencv-python-headless
